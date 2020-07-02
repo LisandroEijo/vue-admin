@@ -1,22 +1,38 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
     <router-view />
   </div>
 </template>
 
 <style lang="scss">
+* {
+  box-sizing: border-box;
+}
+body {
+  background: $dark-bg;
+  font-size: 16px;
+  @include body;
+}
+h1 {
+  @include title1;
+}
+h2 {
+  @include title2;
+}
+h3 {
+  @include title3;
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
 }
-
+a {
+  color: $teal;
+  &:hover {
+    color: saturate(lighten($teal, 10), 20);
+  }
+}
 #nav {
   padding: 30px;
 

@@ -1,0 +1,89 @@
+@import "vendors/normalize.min.scss";
+@import "partials/_colors.scss";
+@import "partials/centered";
+@import "partials/_typography";
+
+.container {
+  max-width: 1100px;
+  width: 95%;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+.dark-mode {
+
+  &,
+  & * {
+    transition: all 0.5s;
+  }
+
+  background-color: $dark-bg;
+
+  p,
+  h2 {
+    /* color: darken($light-text, 20); */
+    color: $light-text;
+  }
+
+  a {
+    color: $teal;
+
+    &:hover {
+      color: saturate(lighten($teal, 10), 20);
+    }
+  }
+
+  input[type="password"],
+  input[type="email"],
+  input[type="text"] {
+    border: 2px solid lighten($dark-bg, 50);
+    background: lighten($dark-bg, 60);
+  }
+}
+
+.light-mode {
+
+  &,
+  & * {
+    transition: all 0.5s;
+  }
+
+  background-color: $light-bg;
+  color: $dark-text;
+
+  p,
+  h2 {
+    /* color: lighten($dark-text, 20); */
+    color: $dark-text;
+  }
+
+  a {
+    color: $blue;
+
+    &:hover {
+      color: saturate(lighten($blue, 10), 20);
+    }
+  }
+
+  input[type="password"],
+  input[type="email"],
+  input[type="text"] {
+    border: 2px solid darken($light-bg, 0.5);
+    background: darken($light-bg, 10);
+  }
+}
+
+button {
+  padding: 1rem 1.5rem;
+  border: none;
+  background: $teal;
+  color: white;
+  border-radius: 5px;
+  font-size: 1.1em;
+  font-weight: 900;
+  width: 100%;
+
+  &:hover {
+    background: lighten($teal, 10);
+  }
+}
